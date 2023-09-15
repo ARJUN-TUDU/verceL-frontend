@@ -7,6 +7,8 @@ function App() {
 
   const [data,setData] = useState([]);
 
+  axios.defaults.withCredentials = true;
+
   
 
 
