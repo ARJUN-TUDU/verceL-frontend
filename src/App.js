@@ -2,12 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios' 
 import {useState,useEffect} from 'react'
+import Map from './Map';
+
+
 
 function App() {
 
   const [data,setData] = useState([]);
 
-  axios.defaults.withCredentials = true;
+
 
   
 
@@ -16,9 +19,9 @@ function App() {
   useEffect(()=>{
        
     const getData = async() => {
-       
+
       try {
-          const response = await axios.get("https://vercel.com/arjun-tudu/vercel-deploy-3");
+          const response = await axios.get("https://vercel-deploy-3.vercel.app/");
           console.log(response)
           setData(response.data);
       }catch(err){
@@ -29,9 +32,7 @@ function App() {
 
     }
 
-
     getData();
-     
 
   },[])
   
@@ -45,13 +46,7 @@ function App() {
         })
        }
        <hr/>
-       
-
-
-
-
-        
-     
+       <Map/>
     </div>
   );
 }
